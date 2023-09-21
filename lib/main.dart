@@ -3,35 +3,32 @@ import 'pages/home_page.dart';
 import 'pages/login.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+
+
 void main() {
-  runApp(const  MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp( {super.key});
-
   @override
-    Widget build(BuildContext context) {
-      return   MaterialApp(
-
-        title: "hello",
-        theme: ThemeData(
-          fontFamily: GoogleFonts.aboreto().fontFamily
-        
-        ),
-
-        home: const HomePage(),
-
-
-      initialRoute: "/home",
-
-      routes: {
-        // "/": (context) => const Placeholder(),
-        "/home":(context) => const Login(),
-        "/login": (context )=> const Login()
-      } ,
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Bus Tracking App',
       
+      theme: ThemeData(
 
-      );
+        primaryColor: Colors.green,
+        scaffoldBackgroundColor: Colors.black,
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.green,
+
+        ),
+        textTheme: TextTheme(
+          bodyText1: TextStyle(color: Colors.white),
+          bodyText2: TextStyle(color: Colors.white),
+        ),
+      ),
+      home: HomePage(),
+    );
   }
 }

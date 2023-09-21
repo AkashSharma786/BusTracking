@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
 
 
 
@@ -27,13 +27,15 @@ class _LoginState extends State<Login> {
       child: Center(
         child: Column(
           children: [
-            SvgPicture.asset(
-              "assets/images/Login.svg",
-              width: 250,
-              
+            const SizedBox(
+              height: 20,
             ),
 
-            const SizedBox(height: 20,),
+            Image.asset('assets/images/busLogo.png',
+            width: 100,),
+      
+            const SizedBox(height: 60,
+            width: 40,),
 
             const Text("Wel Come",),
 
