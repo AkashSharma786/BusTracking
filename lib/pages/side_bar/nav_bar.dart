@@ -22,12 +22,15 @@ class BottomDrawerState extends State<BottomDrawer>{
 
   @override
   Widget build(BuildContext context) {
+    print(widget.collapse);
     double height = MediaQuery.of(context).size.height;
+
+    print(height);
 
 
     if(widget.collapse == true)
     {
-      height = 0;
+      height = 40;
     }
     else
     {
@@ -37,36 +40,43 @@ class BottomDrawerState extends State<BottomDrawer>{
    
   
 
-    return ClipRRect(
-      borderRadius: BorderRadius.only(topLeft: Radius.circular(20.0), topRight: Radius.circular(20.0)) ,
-      child: Ink(
-
-
-        width: MediaQuery.of(context).size.width,
-        height: height,
-
-        child: Container(
-
-       color : const Color.fromARGB(255, 217, 203, 49),
-          
-          child: const Stack(
-            
+    return Material(
+      
         
-            children: [ 
-              Positioned(
-              bottom: 0,
-              left: 0,
-              child: Center(child: Text("Hellow"))
-          
-              ),
-            ]
-          ),
-        ),
-        
+
+        child: ClipRRect(
+        borderRadius: BorderRadius.only(topLeft: Radius.circular(20.0), topRight: Radius.circular(20.0)) ,
+        child: Ink(
+         color : Color.fromARGB(241, 251, 50, 0),
+
     
-     ),
-  
-   
+          width: MediaQuery.of(context).size.width,
+          height: height,
+    
+          child: Container(
+            
+            child:  Stack(
+              
+          
+              children: [ 
+                Positioned(
+
+
+                bottom: height,
+
+                left: 0,
+                child: Center(child: Text("Hellow"))
+            
+                ),
+              ]
+            ),
+          ),
+          
+      
+       ),
+      
+       
+      ),
     );
   }
 }

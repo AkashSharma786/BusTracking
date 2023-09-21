@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Bus Tracking App',
-      
+
       theme: ThemeData(
 
         primaryColor: Colors.green,
@@ -28,7 +28,18 @@ class MyApp extends StatelessWidget {
           bodyText2: TextStyle(color: Colors.white),
         ),
       ),
-      home: HomePage(),
+
+    routes: {
+
+      '/' :(context) => const HomePage(),
+
+      '/home' :(context) => const  Text(" Home "),
+
+      '/login' :(context) => const Login(),
+
+      //'/favorites' :(context) => const Favorites(),
+    },
+
     );
   }
 }
