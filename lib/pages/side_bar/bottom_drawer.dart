@@ -7,9 +7,9 @@ import '../home_page.dart';
 class BottomDrawer extends StatefulWidget {
 
    final parentKey = GlobalKey<HomePageState>();
-   bool collapse;
+   int index;
 
-  BottomDrawer({Key? key , required bool this.collapse}):super(key: key);
+  BottomDrawer({Key? key , required  this.index}):super(key: key);
 
 
   @override
@@ -23,20 +23,21 @@ class BottomDrawerState extends State<BottomDrawer>{
 
   @override
   Widget build(BuildContext context) {
-    print(widget.collapse);
+    print(widget.index);
     double height = MediaQuery.of(context).size.height/2;
 
     print(height);
 
     double width = MediaQuery.of(context).size.width;
-    if(widget.collapse == true)
-    {
-      height = 40;
-    }
-    else
-    {
-      height = height - height/3; 
-    }
+
+    // if(widget.collapse == true)
+    // {
+    //   height = 40;
+    // }
+    // else
+    // {
+    //   height = height - height/3; 
+    // }
 
     return  Scaffold(
       appBar: AppBar(),
@@ -65,6 +66,14 @@ class BottomDrawerState extends State<BottomDrawer>{
 
         bottomNavigationBar: BottomNavBar(),
     );
+
+
+
+
+
+
+
+
 
     
     // return Material(

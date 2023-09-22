@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_new_app/main.dart';
 import 'package:my_new_app/pages/home_widgets/app_bar.dart';
-import 'package:my_new_app/pages/side_bar/nav_bar.dart';
+import 'package:my_new_app/pages/side_bar/bottom_drawer.dart';
 import 'package:my_new_app/pages/home_widgets/bottom_navigation_bar.dart';
 import 'package:my_new_app/pages/home_widgets/app_bar.dart';
 
@@ -102,7 +102,6 @@ class HomePageState extends State<HomePage> {
           );
         },
       ),
-
         
         
 
