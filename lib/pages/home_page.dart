@@ -1,13 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_new_app/main.dart';
 import 'package:my_new_app/pages/home_widgets/app_bar.dart';
-import 'package:my_new_app/pages/side_bar/bottom_drawer.dart';
-import 'package:my_new_app/pages/home_widgets/bottom_navigation_bar.dart';
-import 'package:my_new_app/pages/home_widgets/app_bar.dart';
+import 'package:my_new_app/pages/home_widgets/bookmark_drawer.dart';
+import 'package:my_new_app/pages/home_widgets/settings_drawer.dart';
+
+import 'home_widgets/bottom_navigation_bar.dart';
+
+
+typedef void IntCallback(int value);
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+   const HomePage({Key? key}) : super(key: key);
+
+  
+
 
    
 
@@ -18,10 +24,18 @@ class HomePage extends StatefulWidget {
 class HomePageState extends State<HomePage> {
   
   bool isDrawerOpen = false;
+  int index = 0;
+
+  void setIndex(int currIndex)
+  {
+    setState(() {
+      index = currIndex;
+    });
+
+  }
 
 
   void toggleDrawer() {
-    print("object called");
     setState(() {
           isDrawerOpen = !isDrawerOpen;
 
@@ -30,8 +44,45 @@ class HomePageState extends State<HomePage> {
     
   }
 
+ 
+
   @override
   Widget build(BuildContext context) {
+
+  
+       Widget content ;
+
+          switch (index) {
+            case 0:
+            print("Case $index called");
+              content = Text("kdfj");// Bookmark(isOpen : isDrawerOpen);
+            
+           break;
+
+            case 1:
+              content = Text("bookmark");//SettingsDrawer(isOpen: isDrawerOpen);
+
+            
+             print("case $index called");
+            
+            break;
+
+            case 2:
+            content = Text("Pay");
+
+            break;
+
+            case 3:
+
+            content = Text("Settings");
+            
+            default:
+            content =  Bookmark(isOpen: isDrawerOpen);
+          }
+        
+
+
+
     return Scaffold(
     
       backgroundColor: const Color.fromARGB(0, 0, 0, 0),
@@ -65,6 +116,7 @@ class HomePageState extends State<HomePage> {
                 ],
               ),
             ),
+
             ListTile(
               leading: Icon(Icons.leaderboard, color: Colors.green),
               title: Text('Leaderboard', style: TextStyle(color: Colors.white)),
@@ -96,61 +148,21 @@ class HomePageState extends State<HomePage> {
 
 
 
-      body: Stack(
-        children: [
-          Center(
-            child: Text('Content of the screen'),
-          ),
-          if (isDrawerOpen)
-            GestureDetector(
-              onTap: toggleDrawer, // Close the drawer on tap
-              child: Container(
-                color: Colors.black.withOpacity(0.5), // Background overlay
-              ),
-            ),
-          AnimatedPositioned(
-            duration: Duration(milliseconds: 300),
-            left: 0,
-            right: 0,
-            bottom: isDrawerOpen ? 0 : -400, // Control the height of the drawer
-            child: Container(
-              height: 400, // Set the height of the drawer as needed
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.vertical(top: Radius.circular(16.0)),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey,
-                    blurRadius: 10.0,
-                  ),
-                ],
-              ),
-              child: Column(
-                children: [
-                  ListTile(
-                    title: Text('Drawer Item 1'),
-                    onTap: () {
-                      // Add your functionality for Drawer Item 1 here
-                      toggleDrawer(); // Close the drawer
-                    },
-                  ),
-                  ListTile(
-                    title: Text('Drawer Item 2'),
-                    onTap: () {
-                      // Add your functionality for Drawer Item 2 here
-                      toggleDrawer(); // Close the drawer
-                    },
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
+      body: content,
+
+
+       
+      
+
+      bottomNavigationBar: BottomNavBar(toggle: toggleDrawer, setIndex: setIndex,),
+    );
+  }
+}
 
 
 
-      // body: LayoutBuilder(
+
+ // body: LayoutBuilder(
 
       //   builder: (BuildContext context, BoxConstraints constraints) {
       //     return SingleChildScrollView(
@@ -172,18 +184,6 @@ class HomePageState extends State<HomePage> {
       //     );
       //   },
       // ),
-        
-      
-
-      bottomNavigationBar: BottomNavBar(toggle: toggleDrawer,),
-    );
-  }
-}
-
-
-
-
-
 
 
 
