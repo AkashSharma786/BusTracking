@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_new_app/pages/home_widgets/app_bar.dart';
 import 'package:my_new_app/pages/home_widgets/bookmark_drawer.dart';
+import 'package:my_new_app/pages/home_widgets/payments_drawer.dart';
 import 'package:my_new_app/pages/home_widgets/settings_drawer.dart';
 
 import 'home_widgets/bottom_navigation_bar.dart';
@@ -55,26 +56,27 @@ class HomePageState extends State<HomePage> {
           switch (index) {
             case 0:
             print("Case $index called");
-              content = Text("kdfj");// Bookmark(isOpen : isDrawerOpen);
-            
+
+           content = Text("Home screen");
+
            break;
 
             case 1:
-              content = Text("bookmark");//SettingsDrawer(isOpen: isDrawerOpen);
-
+             content = Bookmark(isOpen : isDrawerOpen);
             
              print("case $index called");
             
             break;
 
             case 2:
-            content = Text("Pay");
+            content = PayMentDrawer(isOpen: isDrawerOpen);
 
             break;
 
             case 3:
-
-            content = Text("Settings");
+            content = SettingsDrawer(isOpen: isDrawerOpen);
+            break;
+      
             
             default:
             content =  Bookmark(isOpen: isDrawerOpen);
