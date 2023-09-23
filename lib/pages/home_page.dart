@@ -25,6 +25,8 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
+
+  late double screenHeight;
   
   bool isDrawerOpen = false;
   int index = 0;
@@ -63,6 +65,8 @@ void toggleRightDrawer(){
   @override
   Widget build(BuildContext context) {
 
+    screenHeight = MediaQuery.of(context).size.height - MediaQuery.of(context).size.height /6;
+
   
        Widget content ;
 
@@ -75,24 +79,24 @@ void toggleRightDrawer(){
            break;
 
             case 1:
-             content = Bookmark(isOpen : isDrawerOpen);
+             content = Bookmark(isOpen : isDrawerOpen , height: screenHeight,);
             
              print("case $index called");
             
             break;
 
             case 2:
-            content = PayMentDrawer(isOpen: isDrawerOpen);
+            content = PayMentDrawer(isOpen: isDrawerOpen , height: screenHeight,);
 
             break;
 
             case 3:
-            content = SettingsDrawer(isOpen: isDrawerOpen);
+            content = SettingsDrawer(isOpen: isDrawerOpen , height: screenHeight,);
             break;
       
             
             default:
-            content =  Bookmark(isOpen: isDrawerOpen);
+            content =  Bookmark(isOpen: isDrawerOpen , height: screenHeight,);
           }
         
 

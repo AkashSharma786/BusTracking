@@ -41,9 +41,6 @@ class CustomAppBarState extends State<NavBar>{
               )
           ),
 
-
-
-
         ],
       );
     }

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class Bookmark extends StatefulWidget {
   bool isOpen;
-  
-  Bookmark({super.key, required this.isOpen});
+  double height;
+  Bookmark({super.key, required this.isOpen , required this.height});
 
   @override
   State<Bookmark> createState() => BookmarkState();
@@ -25,13 +25,13 @@ class BookmarkState extends State<Bookmark> {
           child: Text('Content fgfgfgfg of the screen'),
         ),
      
-            if ((widget.isOpen))
-              GestureDetector(
-                onTap: toggleDrawer, // Close the drawer on tap
-                child: Container(
-                  color: Colors.black.withOpacity(0.5), // Background overlay
-                ),
-              ),
+            // if ((widget.isOpen))
+            //   GestureDetector(
+            //     onTap: toggleDrawer, // Close the drawer on tap
+            //     child: Container(
+            //       color: Colors.black.withOpacity(0.5), // Background overlay
+            //     ),
+            //   ),
 
       
             AnimatedPositioned(
@@ -39,9 +39,9 @@ class BookmarkState extends State<Bookmark> {
               left: 0,
               right: 0,
               bottom:
-                  widget.isOpen ? 0 : -400, // Control the height of the drawer
+                  widget.isOpen ? 0 : -widget.height, // Control the height of the drawer
               child: Container(
-                height: 400, // Set the height of the drawer as needed
+                height: widget.height, // Set the height of the drawer as needed
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 211, 136, 136),
                   borderRadius:

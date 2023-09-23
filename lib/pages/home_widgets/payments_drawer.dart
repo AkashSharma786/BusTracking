@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class PayMentDrawer extends StatefulWidget {
   bool isOpen;
-  
-  PayMentDrawer({super.key, required this.isOpen});
+  double height;
+  PayMentDrawer({super.key, required this.isOpen , required this.height});
 
   @override
   State<PayMentDrawer> createState() => PayMentDrawerState();
@@ -39,9 +39,9 @@ class PayMentDrawerState extends State<PayMentDrawer> {
               left: 0,
               right: 0,
               bottom:
-                  widget.isOpen ? 0 : -400, // Control the height of the drawer
+                  widget.isOpen ? 0 : -widget.height, // Control the height of the drawer
               child: Container(
-                height: 400, // Set the height of the drawer as needed
+                height: widget.height, // Set the height of the drawer as needed
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 97, 196, 25),
                   borderRadius:

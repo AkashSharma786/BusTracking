@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class SettingsDrawer extends StatefulWidget {
   bool isOpen;
-  
-  SettingsDrawer({super.key, required this.isOpen});
+  double height;
+  SettingsDrawer({super.key, required this.isOpen , required this.height});
 
   @override
   State<SettingsDrawer> createState() => SettingsDrawerState();
@@ -38,9 +38,9 @@ class SettingsDrawerState extends State<SettingsDrawer> {
               left: 0,
               right: 0,
               bottom:
-                  widget.isOpen ? 0 : -400, // Control the height of the drawer
+                  widget.isOpen ? 0 : -widget.height, // Control the height of the drawer
               child: Container(
-                height: 400, // Set the height of the drawer as needed
+                height: widget.height, // Set the height of the drawer as needed
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 217, 13, 13),
                   borderRadius:
