@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import '../home_page.dart';
-import '../side_bar/bottom_drawer.dart';
+import '../side_bar/left_drawer.dart';
 
 class BottomNavBar extends StatefulWidget {
    int index  = 0;
