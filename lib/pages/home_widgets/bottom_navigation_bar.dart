@@ -1,71 +1,66 @@
 
 import 'package:flutter/material.dart';
-
-import '../side_bar/nav_bar.dart';
+import '../home_page.dart';
+import '../side_bar/bottom_drawer.dart';
 
 class BottomNavBar extends StatefulWidget {
-  const BottomNavBar({super.key});
+   int index  = 0;
+   final VoidCallback toggle;
+   final IntCallback setIndex ;
 
+   BottomNavBar({Key ? key, required this.toggle , required this.setIndex}):super(key: key);
+
+ 
   @override
   State<BottomNavBar> createState() => BottomNavBarState();
 }
 
 class BottomNavBarState extends State<BottomNavBar> {
+  
+
+   onNavBarButtonTap(index)
+  {
+    
+       widget.toggle();
+
+      widget.setIndex(index);
+    
+   
+     
+  }
+
   @override
   Widget build(BuildContext context) {
-    bool collapse = false;
+
+    return  Stack(
+      children:[ BottomNavigationBar(
+      
+            backgroundColor: Color.fromARGB(255, 255, 255, 255),
     
-    return  BottomNavigationBar(
+             onTap: onNavBarButtonTap ,
     
-          backgroundColor: Color.fromARGB(255, 255, 255, 255),
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home, color: Color.fromARGB(255, 195, 122, 80)),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.bookmark, color: Colors.black),
-              label: 'Bookmark',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.payment, color: Colors.black),
-              label: 'Payment',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.settings, color: Colors.black),
-              label: 'Settings',
-            ),
-          ],
-          selectedItemColor: Color.fromARGB(238, 17, 218, 23),
-          unselectedItemColor: Color.fromARGB(252, 0, 0, 0),
-          onTap: (int index) {
-            print(index);
-            switch (index) {
-              case 0:
-                //Navigator.pop(context);
-                break;
-              case 1:
-                collapse = !collapse;
-                
-                  Navigator.push(context, MaterialPageRoute(  builder: (context) => BottomDrawer(collapse: collapse))
-
-                );
-                   
-          
-
-                print("Case one executed");
-                break;
-
-              case 2:
-                print(index);
-                break;
-
-              case 3:
-                print(index);
-                break;
-
-              default:
-            }
-          });
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home, color: Color.fromARGB(255, 195, 122, 80)),
+                label: 'Home',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.bookmark, color: Colors.black),
+                label: 'Bookmark',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.payment, color: Colors.black),
+                label: 'Payment',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.settings, color: Colors.black),
+                label: 'Settings',
+              ),
+            ],
+            selectedItemColor: Color.fromARGB(238, 17, 218, 23),
+            unselectedItemColor: Color.fromARGB(252, 0, 0, 0),
+    
+        ),]
+    );
   }
 }
