@@ -102,30 +102,36 @@ void toggleRightDrawer(){
 
 
 
-    return Scaffold(
-      key: scaffoldKey,
-    
-      backgroundColor: const Color.fromARGB(0, 0, 0, 0),
-
-
-      appBar: NavBar( controlRightDrawer: toggleRightDrawer,),
-
-
-      drawer: LeftDrawer() ,
-
-  
-
-      endDrawer:  RightDrawer() ,
-
-
-
-      body: content,
-
-
-       
-      
-
-      bottomNavigationBar: BottomNavBar(toggle: toggleDrawer, setIndex: setIndex,),
+    return  Scaffold(
+resizeToAvoidBottomInset: false,
+          key: scaffoldKey,
+        
+          backgroundColor: const Color.fromARGB(0, 0, 0, 0),
+          
+          
+          appBar: NavBar( controlRightDrawer: toggleRightDrawer,),
+          
+          
+          drawer: LeftDrawer() ,
+          
+          
+        
+          
+          endDrawer:  RightDrawer() ,
+          
+          
+          
+          body: SingleChildScrollView(
+            
+            child: content
+            ) ,
+          
+          
+           
+          
+          
+          bottomNavigationBar: BottomNavBar(toggle: toggleDrawer, setIndex: setIndex,),
+        
     );
   }
 }

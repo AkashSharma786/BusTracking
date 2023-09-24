@@ -38,10 +38,10 @@ class BookmarkState extends State<Bookmark> {
               duration: Duration(milliseconds: 300),
               left: 0,
               right: 0,
-              bottom:
-                  widget.isOpen ? 0 : -widget.height, // Control the height of the drawer
+              bottom: 0,
+                
               child: Container(
-                height: widget.height, // Set the height of the drawer as needed
+                height:  widget.isOpen? 0 :widget.height, // Set the height of the drawer as needed
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 211, 136, 136),
                   borderRadius:
