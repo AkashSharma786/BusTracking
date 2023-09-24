@@ -13,7 +13,7 @@ class LeftDrawerState extends State<LeftDrawer> {
     return  Drawer(
         child: ListView(
           children: [
-            DrawerHeader(
+            const DrawerHeader(
               decoration: BoxDecoration(
                 color: Colors.green,
               ),
@@ -37,24 +37,24 @@ class LeftDrawerState extends State<LeftDrawer> {
             ),
 
             ListTile(
-              leading: Icon(Icons.leaderboard, color: Colors.green),
-              title: Text('Leaderboard', style: TextStyle(color: Colors.white)),
+              leading: const Icon(Icons.leaderboard, color: Colors.green),
+              title: const Text('Leaderboard', style: TextStyle(color: Colors.white)),
               onTap: () {
                 Navigator.pop(context); // Close the drawer
                 // Handle leaderboard tap
               },
             ),
             ListTile(
-              leading: Icon(Icons.mail, color: Colors.green),
-              title: Text('Mail Us', style: TextStyle(color: Colors.white)),
+              leading: const Icon(Icons.mail, color: Colors.green),
+              title: const Text('Mail Us', style: TextStyle(color: Colors.white)),
               onTap: () {
                 Navigator.pop(context); // Close the drawer
                 // Handle mail us tap
               },
             ),
             ListTile(
-              leading: Icon(Icons.info, color: Colors.green),
-              title: Text('About Us', style: TextStyle(color: Colors.white)),
+              leading: const Icon(Icons.info, color: Colors.green),
+              title: const Text('About Us', style: TextStyle(color: Colors.white)),
               onTap: () {
                 Navigator.pop(context); // Close the drawer
                 // Handle about us tap

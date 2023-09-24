@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
 import '../home_page.dart';
-import '../side_bar/left_drawer.dart';
 
 class BottomNavBar extends StatefulWidget {
    int index  = 0;
@@ -35,7 +34,7 @@ class BottomNavBarState extends State<BottomNavBar> {
     return  Stack(
       children:[ BottomNavigationBar(
       
-            backgroundColor: Color.fromARGB(255, 255, 255, 255),
+            backgroundColor: const Color.fromARGB(255, 255, 255, 255),
     
              onTap: onNavBarButtonTap ,
     
@@ -57,8 +56,8 @@ class BottomNavBarState extends State<BottomNavBar> {
                 label: 'Settings',
               ),
             ],
-            selectedItemColor: Color.fromARGB(238, 17, 218, 23),
-            unselectedItemColor: Color.fromARGB(252, 0, 0, 0),
+            selectedItemColor: const Color.fromARGB(238, 17, 218, 23),
+            unselectedItemColor: const Color.fromARGB(252, 0, 0, 0),
     
         ),]
     );

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:my_new_app/pages/home_widgets/app_bar.dart';
@@ -11,7 +10,7 @@ import './side_bar/left_drawer.dart';
 import 'home_widgets/bottom_navigation_bar.dart';
 
 
-typedef void IntCallback(int value);
+typedef IntCallback = void Function(int value);
 
 class HomePage extends StatefulWidget {
    const HomePage({Key? key}) : super(key: key);
@@ -75,7 +74,7 @@ void toggleRightDrawer(){
             case 0:
             print("Case $index called");
 
-           content = Text("Home screen");
+           content = const Text("Home screen");
 
            break;
 
@@ -108,7 +107,7 @@ void toggleRightDrawer(){
       scrollDirection: Axis.vertical,
       
 
-      child: Container(
+      child: SizedBox(
         height: MediaQuery.of(context).size.height,
         child: Scaffold(
           
@@ -123,12 +122,12 @@ void toggleRightDrawer(){
               appBar: NavBar( controlRightDrawer: toggleRightDrawer,),
               
               
-              drawer: LeftDrawer() ,
+              drawer: const LeftDrawer() ,
               
             
             
               
-              endDrawer:  RightDrawer() ,
+              endDrawer:  const RightDrawer() ,
               
               
               

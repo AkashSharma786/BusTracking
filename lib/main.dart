@@ -17,17 +17,19 @@ class MyApp extends StatelessWidget {
 
       theme: ThemeData(
 
-        primaryColor: Colors.green,
+        primaryColor: Color.fromARGB(1, 128, 200, 86),
         scaffoldBackgroundColor: Colors.black,
-        secondaryHeaderColor: Color.fromARGB(0, 73, 224, 8),
+        secondaryHeaderColor: Color.fromARGB(8, 73, 224, 8),
         appBarTheme: AppBarTheme(
-          backgroundColor: Colors.green,
+          backgroundColor: Color.fromARGB(255, 128, 200, 86),
         
 
         ),
         textTheme: TextTheme(
+        
           bodyText1: TextStyle(color: Colors.white),
           bodyText2: TextStyle(color: Colors.white),
+          
         ),
       ),
 

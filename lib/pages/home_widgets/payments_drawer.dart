@@ -21,7 +21,7 @@ class PayMentDrawerState extends State<PayMentDrawer> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Center(
+        const Center(
           child: Text('Content  of payment screen'),
         ),
      
@@ -35,14 +35,14 @@ class PayMentDrawerState extends State<PayMentDrawer> {
 
       
             AnimatedPositioned(
-              duration: Duration(milliseconds: 300),
+              duration: const Duration(milliseconds: 300),
               left: 0,
               right: 0,
               bottom:
                   widget.isOpen ? 0 : -widget.height, // Control the height of the drawer
               child: Container(
                 height: widget.height, // Set the height of the drawer as needed
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 97, 196, 25),
                   borderRadius:
                       BorderRadius.vertical(top: Radius.circular(16.0)),
@@ -56,14 +56,14 @@ class PayMentDrawerState extends State<PayMentDrawer> {
                 child: Column(
                   children: [
                     ListTile(
-                      title: Text('Payment Option 1'),
+                      title: const Text('Payment Option 1'),
                       onTap: () {
                         // Add your functionality for Drawer Item 1 here
                         toggleDrawer(); // Close the drawer
                       },
                     ),
                     ListTile(
-                      title: Text('Option 2 Item 2'),
+                      title: const Text('Option 2 Item 2'),
                       onTap: () {
                         // Add your functionality for Drawer Item 2 here
                         toggleDrawer(); // Close the drawer

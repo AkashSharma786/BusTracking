@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class RightDrawer extends StatefulWidget {
   
-  RightDrawer({super.key });
+  const RightDrawer({super.key });
 
   @override
   State<RightDrawer> createState() => RightDrawerState();
@@ -14,7 +14,7 @@ class RightDrawerState extends State<RightDrawer> {
     return  Drawer(
         child: ListView(
           children: [
-            DrawerHeader(
+            const DrawerHeader(
               decoration: BoxDecoration(
                 color: Colors.yellow,
               ),
@@ -38,24 +38,24 @@ class RightDrawerState extends State<RightDrawer> {
             ),
 
             ListTile(
-              leading: Icon(Icons.leaderboard, color: Colors.green),
-              title: Text('dfsdf', style: TextStyle(color: Colors.white)),
+              leading: const Icon(Icons.leaderboard, color: Colors.green),
+              title: const Text('dfsdf', style: TextStyle(color: Colors.white)),
               onTap: () {
                 Navigator.pop(context); // Close the drawer
                 // Handle leaderboard tap
               },
             ),
             ListTile(
-              leading: Icon(Icons.mail, color: Colors.green),
-              title: Text('dfsdf dfsdfsf Us', style: TextStyle(color: Colors.white)),
+              leading: const Icon(Icons.mail, color: Colors.green),
+              title: const Text('dfsdf dfsdfsf Us', style: TextStyle(color: Colors.white)),
               onTap: () {
                 Navigator.pop(context); // Close the drawer
                 // Handle mail us tap
               },
             ),
             ListTile(
-              leading: Icon(Icons.info, color: Colors.green),
-              title: Text('About Us', style: TextStyle(color: Colors.white)),
+              leading: const Icon(Icons.info, color: Colors.green),
+              title: const Text('About Us', style: TextStyle(color: Colors.white)),
               onTap: () {
                 Navigator.pop(context); // Close the drawer
                 // Handle about us tap
