@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:my_new_app/pages/home_widgets/app_bar.dart';
 import 'package:my_new_app/pages/home_widgets/bookmark_drawer.dart';
@@ -102,36 +103,46 @@ void toggleRightDrawer(){
 
 
 
-    return  Scaffold(
-resizeToAvoidBottomInset: false,
-          key: scaffoldKey,
-        
-          backgroundColor: const Color.fromARGB(0, 0, 0, 0),
+    return  SingleChildScrollView(
+
+      scrollDirection: Axis.vertical,
+      
+
+      child: Container(
+        height: MediaQuery.of(context).size.height,
+        child: Scaffold(
           
-          
-          appBar: NavBar( controlRightDrawer: toggleRightDrawer,),
-          
-          
-          drawer: LeftDrawer() ,
-          
-          
-        
-          
-          endDrawer:  RightDrawer() ,
-          
-          
-          
-          body: SingleChildScrollView(
+          resizeToAvoidBottomInset: false,
+              key: scaffoldKey,
+              
+              drawerDragStartBehavior: DragStartBehavior.start,
             
-            child: content
-            ) ,
-          
-          
-           
-          
-          
-          bottomNavigationBar: BottomNavBar(toggle: toggleDrawer, setIndex: setIndex,),
-        
+              backgroundColor: const Color.fromARGB(0, 0, 0, 0),
+              
+              
+              appBar: NavBar( controlRightDrawer: toggleRightDrawer,),
+              
+              
+              drawer: LeftDrawer() ,
+              
+            
+            
+              
+              endDrawer:  RightDrawer() ,
+              
+              
+              
+              body:   content,
+                
+              
+              
+               
+              
+              
+              bottomNavigationBar: BottomNavBar(toggle: toggleDrawer, setIndex: setIndex,),
+            
+        ),
+      ),
     );
   }
 }
