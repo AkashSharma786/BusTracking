@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 
 
 class RightDrawer extends StatefulWidget {
+
   bool isDrawerOpen = false;
-  RightDrawer({super.key , required this.isDrawerOpen});
+  VoidCallback toggleDrawer;
+  RightDrawer({super.key , required this.isDrawerOpen , required this.toggleDrawer});
 
   @override
   State<RightDrawer> createState() => _RightDrawerState();
@@ -13,9 +15,13 @@ class RightDrawer extends StatefulWidget {
 class _RightDrawerState extends State<RightDrawer> {
   @override
   Widget build(BuildContext context) {
-//print(widget.isDrawerOpen);
+
     return Stack(
       children: [
+        if ((!widget.isDrawerOpen))
+              GestureDetector(
+                onTap: widget.toggleDrawer, // Close the drawer on tap
+              ),
 
         
         AnimatedPositioned(
@@ -33,7 +39,7 @@ class _RightDrawerState extends State<RightDrawer> {
             boxShadow: [
               !widget.isDrawerOpen?
                 BoxShadow(
-                  color: Colors.grey.withOpacity(0.5), // Shadow color
+                  color: Color.fromARGB(255, 204, 192, 192).withOpacity(0.5), // Shadow color
                   spreadRadius: 5, // Spread radius
                   blurRadius: 7, // Blur radius
                   offset: Offset(0, 3), // Offset in x and y direction

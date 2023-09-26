@@ -128,7 +128,7 @@ void toggleRightDrawer(){
               
               body: Stack(
                 children: [
-                  RightDrawer(isDrawerOpen: isRightDrawerOpen),
+                  RightDrawer(isDrawerOpen: isRightDrawerOpen , toggleDrawer: toggleRightDrawer,),
                   content,
                 ],
               ),
