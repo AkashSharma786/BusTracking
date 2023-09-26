@@ -19,12 +19,12 @@ class CustomAppBarState extends State<NavBar>{
     Widget build(BuildContext context) {
         return AppBar(
       
-        backgroundColor: Colors.green,
+        backgroundColor:Color.fromARGB(255, 128, 200, 86),
         title:const TextField(
           style: TextStyle(color: Colors.white),
           decoration: InputDecoration(
             hintText: "Search...",
-            hintStyle: TextStyle(color: Colors.grey),
+            hintStyle: TextStyle(color: Colors.white),
             border: InputBorder.none,
           ),
         ),

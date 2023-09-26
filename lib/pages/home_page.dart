@@ -33,7 +33,7 @@ class HomePageState extends State<HomePage> {
   bool isLeftDrawerOpen = false;
   bool isRightDrawerOpen = false;
 
-  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  
 
   void setIndex(int currIndex)
   {
@@ -57,8 +57,9 @@ class HomePageState extends State<HomePage> {
 void toggleRightDrawer(){
   
  setState(() {
-   scaffoldKey.currentState!.openEndDrawer();
+   isRightDrawerOpen = !isRightDrawerOpen;
  });
+ print("Right drawer cll function $isRightDrawerOpen");
 }
  
 
@@ -110,13 +111,14 @@ void toggleRightDrawer(){
       child: SizedBox(
         height: MediaQuery.of(context).size.height,
         child: Scaffold(
+          backgroundColor: Colors.white,
           
           resizeToAvoidBottomInset: false,
-              key: scaffoldKey,
+              
               
               drawerDragStartBehavior: DragStartBehavior.start,
             
-              backgroundColor: const Color.fromARGB(0, 0, 0, 0),
+              
               
               
               appBar: NavBar( controlRightDrawer: toggleRightDrawer,),
@@ -124,14 +126,12 @@ void toggleRightDrawer(){
               
               drawer: const LeftDrawer() ,
               
-            
-            
-              
-              endDrawer:  const RightDrawer() ,
-              
-              
-              
-              body:   content,
+              body: Stack(
+                children: [
+                  RightDrawer(isDrawerOpen: isRightDrawerOpen),
+                  content,
+                ],
+              ),
                 
               
               

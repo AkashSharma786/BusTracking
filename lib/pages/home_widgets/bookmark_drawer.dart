@@ -19,11 +19,8 @@ class BookmarkState extends State<Bookmark> {
 
   @override
   Widget build(BuildContext context) {
-    return 
-      
-      Stack(
-
-        children: [
+    return  Stack(
+          children: [
           Center(
             child: Text('Content fgfgfgfg of the screen'),
           ),
@@ -41,10 +38,10 @@ class BookmarkState extends State<Bookmark> {
                 duration: Duration(milliseconds: 300),
                 left: 0,
                 right: 0,
-                bottom: 0,
+                bottom: widget.isOpen ? 0 : -widget.height,
                   
                 child: Container(
-                  height: widget.isOpen ?0 : widget.height, // Set the height of the drawer as needed
+                  height: widget.height, 
                   decoration: BoxDecoration(
                     color: Color.fromARGB(255, 211, 136, 136),
                     borderRadius:
