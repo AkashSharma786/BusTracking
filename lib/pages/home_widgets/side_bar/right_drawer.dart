@@ -30,6 +30,8 @@ class _RightDrawerState extends State<RightDrawer> {
           width: widget.isDrawerOpen ? 0: MediaQuery.of(context).size.width /2,
           
           height:widget.isDrawerOpen ?0: MediaQuery.of(context).size.height/1.5,
+          
+           duration: const Duration(milliseconds: 300),
 
           child: Ink(
            decoration: BoxDecoration(
@@ -39,18 +41,16 @@ class _RightDrawerState extends State<RightDrawer> {
             boxShadow: [
               !widget.isDrawerOpen?
                 BoxShadow(
-                  color: Color.fromARGB(255, 204, 192, 192).withOpacity(0.5), // Shadow color
+                  color: const Color.fromARGB(255, 204, 192, 192).withOpacity(0.5), // Shadow color
                   spreadRadius: 5, // Spread radius
                   blurRadius: 7, // Blur radius
-                  offset: Offset(0, 3), // Offset in x and y direction
-                ): BoxShadow(),
+                  offset: const Offset(0, 3), // Offset in x and y direction
+                ): const BoxShadow(),
           
             ]),
             
             
-            child: Text("${widget.isDrawerOpen}")),
-          
-           duration: Duration(milliseconds: 300)),
+            child: Text("${widget.isDrawerOpen}"))),
 
           
       ],
