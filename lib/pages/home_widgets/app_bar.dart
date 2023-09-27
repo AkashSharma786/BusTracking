@@ -1,10 +1,11 @@
 
 import 'package:flutter/material.dart';
+import 'package:my_new_app/app_color.dart';
 
 class NavBar extends StatefulWidget implements PreferredSizeWidget {
     
     VoidCallback controlRightDrawer;
-    NavBar({Key ? key ,  required this.controlRightDrawer }) : preferredSize = Size.fromHeight(kToolbarHeight), super(key: key);
+    NavBar({Key ? key ,  required this.controlRightDrawer }) : preferredSize = const Size.fromHeight(kToolbarHeight), super(key: key);
 
     @override
     final Size preferredSize; // default is 56.0
@@ -19,12 +20,12 @@ class CustomAppBarState extends State<NavBar>{
     Widget build(BuildContext context) {
         return AppBar(
       
-        backgroundColor:Color.fromARGB(255, 128, 200, 86),
-        title:const TextField(
-          style: TextStyle(color: Colors.white),
+        backgroundColor:const AppColor().navigationbarColor,
+        title: TextField(
+          style: TextStyle(color: AppColor().highlightedTextColor),
           decoration: InputDecoration(
             hintText: "Search...",
-            hintStyle: TextStyle(color: Colors.white),
+            hintStyle: TextStyle(color: AppColor().highlightedTextColor),
             border: InputBorder.none,
           ),
         ),
@@ -33,10 +34,10 @@ class CustomAppBarState extends State<NavBar>{
         actions: [
 
           Padding(
-            padding:  EdgeInsets.all(8.0),
+            padding:  const EdgeInsets.all(8.0),
 
             child: IconButton(
-              icon: CircleAvatar( backgroundImage: AssetImage("assets/images/busLogo.png"),),
+              icon: const CircleAvatar( backgroundImage: AssetImage("assets/images/busLogo.png"),),
               onPressed: widget.controlRightDrawer,
               )
           ),

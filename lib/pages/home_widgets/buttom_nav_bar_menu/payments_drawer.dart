@@ -1,34 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:my_new_app/app_color.dart';
 
-class SettingsDrawer extends StatefulWidget {
+
+class PayMentDrawer extends StatefulWidget {
   bool isOpen;
   double height;
-  SettingsDrawer({super.key, required this.isOpen , required this.height});
+  PayMentDrawer({super.key, required this.isOpen , required this.height});
 
   @override
-  State<SettingsDrawer> createState() => SettingsDrawerState();
+  State<PayMentDrawer> createState() => PayMentDrawerState();
 }
 
-class SettingsDrawerState extends State<SettingsDrawer> {
+class PayMentDrawerState extends State<PayMentDrawer> {
   void toggleDrawer() {
     setState(() {
       widget.isOpen = !widget.isOpen;
     });
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         const Center(
-          child: Text('Contents of Settings screen'),
+          child: Text('Content  of payment screen'),
         ),
      
             if ((widget.isOpen))
               GestureDetector(
                 onTap: toggleDrawer, // Close the drawer on tap
                 child: Container(
-                  color: Colors.black.withOpacity(0.5), // Background overlay
+                  color: AppColor().unSelectedColor, // Background overlay
                 ),
               ),
 
@@ -41,13 +44,13 @@ class SettingsDrawerState extends State<SettingsDrawer> {
                   widget.isOpen ? 0 : -widget.height, // Control the height of the drawer
               child: Container(
                 height: widget.height, // Set the height of the drawer as needed
-                decoration: const BoxDecoration(
-                  color: Color.fromARGB(255, 217, 13, 13),
+                decoration:  BoxDecoration(
+                  color: AppColor().backgroundColor,
                   borderRadius:
                       BorderRadius.vertical(top: Radius.circular(16.0)),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey,
+                      color:  AppColor().shadowColor,
                       blurRadius: 10.0,
                     ),
                   ],
@@ -55,14 +58,14 @@ class SettingsDrawerState extends State<SettingsDrawer> {
                 child: Column(
                   children: [
                     ListTile(
-                      title: const Text('Settings Item 1'),
+                      title: const Text('Payment Option 1'),
                       onTap: () {
                         // Add your functionality for Drawer Item 1 here
                         toggleDrawer(); // Close the drawer
                       },
                     ),
                     ListTile(
-                      title: const Text('Setting  Item 2'),
+                      title: const Text('Option 2 Item 2'),
                       onTap: () {
                         // Add your functionality for Drawer Item 2 here
                         toggleDrawer(); // Close the drawer

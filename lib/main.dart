@@ -1,38 +1,27 @@
 import 'package:flutter/material.dart';
-import 'pages/home_page.dart';
-import 'pages/login.dart';
-import 'package:google_fonts/google_fonts.dart';
-
-
+import 'widgets/home_page.dart';
+import 'widgets/login.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Bus Tracking App',
+      routes: {
+        '/': (context) => const HomePage(),
 
-    
+        '/home': (context) => const Text(" Home "),
 
-    routes: {
+        '/login': (context) => const Login(),
 
-      '/' :(context) => const HomePage(),
-
-      '/home' :(context) => const  Text(" Home "),
-
-      '/login' :(context) => const Login(),
-
-      //'/favorites' :(context) => const Favorites(),
-    },
-
+        //'/favorites' :(context) => const Favorites(),
+      },
     );
   }
 }
-
-
-
-
-

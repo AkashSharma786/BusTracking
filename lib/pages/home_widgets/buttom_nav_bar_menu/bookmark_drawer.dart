@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_new_app/app_color.dart';
+
 
 class Bookmark extends StatefulWidget {
   bool isOpen;
@@ -21,7 +23,7 @@ class BookmarkState extends State<Bookmark> {
   Widget build(BuildContext context) {
     return  Stack(
           children: [
-          Center(
+          const Center(
             child: Text('Content fgfgfgfg of the screen'),
           ),
        
@@ -35,20 +37,20 @@ class BookmarkState extends State<Bookmark> {
     
         
               AnimatedPositioned(
-                duration: Duration(milliseconds: 300),
+                duration: const Duration(milliseconds: 300),
                 left: 0,
                 right: 0,
                 bottom: widget.isOpen ? 0 : -widget.height,
                   
                 child: Container(
                   height: widget.height, 
-                  decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 211, 136, 136),
+                  decoration:  BoxDecoration(
+                    color: AppColor().backgroundColor,
                     borderRadius:
                         BorderRadius.vertical(top: Radius.circular(16.0)),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.grey,
+                        color: AppColor().nonFocusColor,
                         blurRadius: 10.0,
                       ),
                     ],
@@ -56,14 +58,14 @@ class BookmarkState extends State<Bookmark> {
                   child: Column(
                     children: [
                       ListTile(
-                        title: Text('Drawer Item 1'),
+                        title: const Text('Drawer Item 1'),
                         onTap: () {
                           // Add your functionality for Drawer Item 1 here
                           toggleDrawer(); // Close the drawer
                         },
                       ),
                       ListTile(
-                        title: Text('Drawer Item 2'),
+                        title: const Text('Drawer Item 2'),
                         onTap: () {
                           // Add your functionality for Drawer Item 2 here
                           toggleDrawer(); // Close the drawer
