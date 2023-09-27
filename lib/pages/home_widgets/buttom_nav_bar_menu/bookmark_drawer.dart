@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_new_app/app_color.dart';
+
 
 class Bookmark extends StatefulWidget {
   bool isOpen;
@@ -42,13 +44,13 @@ class BookmarkState extends State<Bookmark> {
                   
                 child: Container(
                   height: widget.height, 
-                  decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 211, 136, 136),
+                  decoration:  BoxDecoration(
+                    color: AppColor().backgroundColor,
                     borderRadius:
                         BorderRadius.vertical(top: Radius.circular(16.0)),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.grey,
+                        color: AppColor().nonFocusColor,
                         blurRadius: 10.0,
                       ),
                     ],

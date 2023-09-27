@@ -9,6 +9,7 @@ import 'package:my_new_app/pages/home_widgets/side_bar/right_drawer.dart';
 import '../pages/home_widgets/side_bar/left_drawer.dart';
 
 import '../pages/home_widgets/bottom_navigation_bar.dart';
+import '../app_color.dart';
 
 typedef IntCallback = void Function(int value);
 
@@ -96,7 +97,7 @@ class HomePageState extends State<HomePage> {
       child: SizedBox(
         height: MediaQuery.of(context).size.height,
         child: Scaffold(
-          backgroundColor: Colors.white,
+          backgroundColor: AppColor().backgroundColor,
           resizeToAvoidBottomInset: false,
           drawerDragStartBehavior: DragStartBehavior.start,
           appBar: NavBar(

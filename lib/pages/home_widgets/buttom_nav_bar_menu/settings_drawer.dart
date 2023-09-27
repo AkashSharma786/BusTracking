@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_new_app/app_color.dart';
 
 class SettingsDrawer extends StatefulWidget {
   bool isOpen;
@@ -28,7 +29,7 @@ class SettingsDrawerState extends State<SettingsDrawer> {
               GestureDetector(
                 onTap: toggleDrawer, // Close the drawer on tap
                 child: Container(
-                  color: Colors.black.withOpacity(0.5), // Background overlay
+                  color: AppColor().nonFocusColor, // Background overlay
                 ),
               ),
 
@@ -41,13 +42,13 @@ class SettingsDrawerState extends State<SettingsDrawer> {
                   widget.isOpen ? 0 : -widget.height, // Control the height of the drawer
               child: Container(
                 height: widget.height, // Set the height of the drawer as needed
-                decoration: const BoxDecoration(
-                  color: Color.fromARGB(255, 217, 13, 13),
+                decoration:  BoxDecoration(
+                  color:  AppColor().backgroundColor,
                   borderRadius:
                       BorderRadius.vertical(top: Radius.circular(16.0)),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey,
+                      color: AppColor().shadowColor,
                       blurRadius: 10.0,
                     ),
                   ],

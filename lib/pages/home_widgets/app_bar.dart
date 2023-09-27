@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:my_new_app/app_color.dart';
 
 class NavBar extends StatefulWidget implements PreferredSizeWidget {
     
@@ -19,12 +20,12 @@ class CustomAppBarState extends State<NavBar>{
     Widget build(BuildContext context) {
         return AppBar(
       
-        backgroundColor:const Color.fromARGB(255, 128, 200, 86),
-        title:const TextField(
-          style: TextStyle(color: Colors.white),
+        backgroundColor:const AppColor().navigationbarColor,
+        title: TextField(
+          style: TextStyle(color: AppColor().highlightedTextColor),
           decoration: InputDecoration(
             hintText: "Search...",
-            hintStyle: TextStyle(color: Colors.white),
+            hintStyle: TextStyle(color: AppColor().highlightedTextColor),
             border: InputBorder.none,
           ),
         ),

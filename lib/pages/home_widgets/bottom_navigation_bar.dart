@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../widgets/home_page.dart';
+import 'package:my_new_app/app_color.dart';
+
 
 class BottomNavBar extends StatefulWidget {
   int index = 0;
@@ -24,28 +26,28 @@ class BottomNavBarState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     return Stack(children: [
       BottomNavigationBar(
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: const AppColor().navigationbarColor,
         onTap: onNavBarButtonTap,
-        items: const <BottomNavigationBarItem>[
+        items:  <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home, color: Color.fromARGB(255, 195, 122, 80)),
+            icon: Icon(Icons.home, color: AppColor().unSelectedColor,),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.bookmark, color: Colors.black),
+            icon: Icon(Icons.bookmark, color: AppColor().unSelectedColor),
             label: 'Bookmark',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.payment, color: Colors.black),
+            icon: Icon(Icons.payment, color: AppColor().unSelectedColor),
             label: 'Payment',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings, color: Colors.black),
+            icon: Icon(Icons.settings, color: AppColor().unSelectedColor),
             label: 'Settings',
           ),
         ],
-        selectedItemColor: const Color.fromARGB(238, 17, 218, 23),
-        unselectedItemColor: const Color.fromARGB(252, 0, 0, 0),
+        selectedItemColor: const AppColor().selectedColor,
+        unselectedItemColor: const AppColor().unSelectedColor,
       ),
     ]);
   }

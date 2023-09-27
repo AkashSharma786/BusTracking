@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_new_app/app_color.dart';
+
 
 class PayMentDrawer extends StatefulWidget {
   bool isOpen;
@@ -29,7 +31,7 @@ class PayMentDrawerState extends State<PayMentDrawer> {
               GestureDetector(
                 onTap: toggleDrawer, // Close the drawer on tap
                 child: Container(
-                  color: Colors.black.withOpacity(0.5), // Background overlay
+                  color: AppColor().unSelectedColor, // Background overlay
                 ),
               ),
 
@@ -42,13 +44,13 @@ class PayMentDrawerState extends State<PayMentDrawer> {
                   widget.isOpen ? 0 : -widget.height, // Control the height of the drawer
               child: Container(
                 height: widget.height, // Set the height of the drawer as needed
-                decoration: const BoxDecoration(
-                  color: Color.fromARGB(255, 97, 196, 25),
+                decoration:  BoxDecoration(
+                  color: AppColor().backgroundColor,
                   borderRadius:
                       BorderRadius.vertical(top: Radius.circular(16.0)),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey,
+                      color:  AppColor().shadowColor,
                       blurRadius: 10.0,
                     ),
                   ],
